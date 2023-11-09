@@ -7,11 +7,13 @@ export const Formulario = () => {
     const {ciudad, pais} = busqueda;
     const [alerta, setAlerta] =useState('');
     const handleSubmit = e => {
+        
         e.preventDefault();
         if(Object.values(busqueda).includes('')){
             setAlerta('Todos los campos son requeridos!');
             return;
         }
+        setAlerta('');
         consultarClima(busqueda);
     }
   return <div className="contenedor">
