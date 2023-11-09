@@ -1,12 +1,16 @@
+import useClima from "../hooks/useClima";
 import { Formulario } from "./Formulario";
+import { Resultado } from "./Resultado";
 
 export const AppClima = () => {
+  const { resultado } = useClima();
   return (
     <>
-    <main className="dos-columnas">
+      <main className="dos-columnas">
+        <Formulario />
 
-      <Formulario />
-    </main>
+        {resultado?.name && <Resultado />}
+      </main>
     </>
   );
 };
